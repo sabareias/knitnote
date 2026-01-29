@@ -1,6 +1,6 @@
 ![Knit Note](KnitNote.png "Knit Note")
 # KNIT NOTE
-    a fiber arts project tracker
+> a fiber arts project tracker
 
 ## Technologies Used
 - **Frontend:** React
