@@ -1,23 +1,12 @@
 ![Knit Note](KnitNote.png "Knit Note")
 # KNIT NOTE
     a fiber arts project tracker
-## Track Used
-    React + Express + Database
 
 ## Technologies Used
 - **Frontend:** React
-- **Styling:** Bootstrap & React Bootstrap
+- **Styling:** Bootstrap / React Bootstrap
 - **Backend:** Express
 - **Database:** SQLite
-
-## How to Run Locally
-1. Open terminal **(Server Terminal)**
-    1. enter `cd [YOUR PATH HERE]\knit-note\server`
-    2. enter `npm run dev`
-2. Open second terminal **(Client Terminal)**
-    1. enter `cd [YOUR PATH HERE]\knit-note\client`
-    2. enter `npm run dev`
-3. Open `Local` link from **Client Terminal**: http://localhost:5173/ 
 
 ## CRUD features
 - **Create**: Create a project by filling out the form
@@ -53,13 +42,8 @@
         - Set true if `end` supplied, false if not
     - In Progress
         - Set true only if `start` is given and no `end` supplied, false if not
-- `app.patch`: Verify 'fields' length is nto zero to prevent patching something with 0 changes made
+- `app.patch`: Verify 'fields' length is not zero to prevent patching something with 0 changes made
 
 ## References
-- [React Bootstrap](https://react-bootstrap.netlify.app/)
-    - [Accordion](https://react-bootstrap.netlify.app/docs/components/accordion)
-    - [Card](https://react-bootstrap.netlify.app/docs/components/cards)
-    - [Modal](https://react-bootstrap.netlify.app/docs/components/modal)
-- [Markdown Guide for README doc](https://www.markdownguide.org/basic-syntax/#code)
 - [Method used for adding transition to scrollbar](https://stackoverflow.com/a/74050413)
 - [Canva for the logo using free resources](https://www.canva.com/)
