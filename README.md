@@ -1,3 +1,4 @@
+![Knit Note](KnitNote.png "Knit Note")
 # KNIT NOTE
     a fiber arts project tracker
 ## Track Used
