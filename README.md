@@ -2,6 +2,8 @@
 # KNIT NOTE
 > a fiber arts project tracker
 
+[Preview Video](https://imgur.com/a/knit-note-preview-Uu9C6Ud)
+
 ## Technologies Used
 - **Frontend:** React
 - **Styling:** Bootstrap / React Bootstrap
@@ -16,6 +18,9 @@
         - A form will pop up in a modal autofilled with project data. Any changes made will be reflected in the project's card after clicking 'Save Changes'
     - **Toggle `completed` status:** click the check box or create/edit & give the project an end date
     - **Toggle `progress` status:** click the check box or  create/edit & give the project a start date and no end date
+
+    <img src="projectImages/EditProject.png" height="250" alt="Edit project screen">
+
 - **Delete**: Delete a project by clicking the `X` button on the right-hand-side of the project card header
 
 ## Client-Side Validation
@@ -25,6 +30,9 @@
         - 3 char min, 100 char max
     - Category
     - Craft Type
+
+    <img src="projectImages/ValidationExample.png" height="250" alt="Required input validation">
+    
 - **Optional inputs**
     - Pattern name
         - 3 char min, 100 char max
@@ -34,6 +42,8 @@
         - Cannot be after end date (if entered)
     - End date
         - Cannot be before start date (if entered)
+     
+    <img src="projectImages/ValidationExample2.png" height="300" alt="Date input validation">
 
 ## Server-Side Validation
 - `app.post`:
