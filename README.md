@@ -1,59 +1,95 @@
+# Knit Note
+
+**A fiber-arts project tracker** — create, edit, and track knitting and crochet projects with full CRUD, client- and server-side validation, and a simple card-based UI.
+
+[![Preview video](https://imgur.com/a/knit-note-preview-Uu9C6Ud)](https://imgur.com/a/knit-note-preview-Uu9C6Ud)
+
 ![Knit Note](KnitNote.png "Knit Note")
-# KNIT NOTE
-> a fiber arts project tracker
 
-[Preview Video](https://imgur.com/a/knit-note-preview-Uu9C6Ud)
+---
 
-## Technologies Used
-- **Frontend:** React
-- **Styling:** Bootstrap / React Bootstrap
-- **Backend:** Express
-- **Database:** SQLite
+## Tech stack
 
-## CRUD features
-- **Create**: Create a project by filling out the form
-- **Read**: Project data stored in the database are read and displayed as cards
-- **Update**: 
-    - **Update Project Data Form:** click the `Edit Project button` on project of choice
-        - A form will pop up in a modal autofilled with project data. Any changes made will be reflected in the project's card after clicking 'Save Changes'
-    - **Toggle `completed` status:** click the check box or create/edit & give the project an end date
-    - **Toggle `progress` status:** click the check box or  create/edit & give the project a start date and no end date
+| Layer    | Technology        |
+|----------|-------------------|
+| Frontend | React             |
+| Styling  | Bootstrap / React Bootstrap |
+| Backend  | Express           |
+| Database | SQLite            |
 
-    <img src="projectImages/EditProject.png" height="250" alt="Edit project screen">
+---
 
-- **Delete**: Delete a project by clicking the `X` button on the right-hand-side of the project card header
+## Features
 
-## Client-Side Validation
-- Invalid inputs result in red error messages popping up below the form field where the error occurred
-- **Required inputs**
-    - Project Title
-        - 3 char min, 100 char max
-    - Category
-    - Craft Type
+### CRUD
 
-    <img src="projectImages/ValidationExample.png" height="250" alt="Required input validation">
-    
-- **Optional inputs**
-    - Pattern name
-        - 3 char min, 100 char max
-    - Yarn name
-        - 3 char min, 100 char max
-    - Start date
-        - Cannot be after end date (if entered)
-    - End date
-        - Cannot be before start date (if entered)
-     
-    <img src="projectImages/ValidationExample2.png" height="300" alt="Date input validation">
+- **Create** — Add a project via the form (title, category, craft, optional pattern, yarn, dates).
+- **Read** — Projects are loaded from the database and shown as cards.
+- **Update**
+  - **Edit form:** Click **Edit Project** on a card → modal opens with current data → save changes to update the card.
+  - **Completed:** Check the box, or set an end date when creating/editing.
+  - **In progress:** Check the box, or set a start date with no end date when creating/editing.
+- **Delete** — Click the **✕** on the right side of a project card header.
 
-## Server-Side Validation
-- `app.post`:
-    - Repeats of server-side validations as backup
-    - Completed
-        - Set true if `end` supplied, false if not
-    - In Progress
-        - Set true only if `start` is given and no `end` supplied, false if not
-- `app.patch`: Verify 'fields' length is not zero to prevent patching something with 0 changes made
+![Edit project](projectImages/EditProject.png "Edit project screen")
+
+### Validation
+
+**Client-side:** Invalid input shows red error messages under the field.
+
+| Input        | Rules |
+|-------------|--------|
+| Project title (required) | 3–100 characters |
+| Category (required)      | Must select one |
+| Craft type (required)    | Must select one |
+| Pattern (optional)       | If provided: 3–100 characters |
+| Yarn (optional)          | If provided: 3–100 characters |
+| Start / end date         | Start cannot be after end |
+
+![Validation example](projectImages/ValidationExample.png "Required input validation")  
+![Date validation](projectImages/ValidationExample2.png "Date input validation")
+
+**Server-side:**
+
+- **POST** — Same rules as above; `completed` and `progress` set from dates (completed = has end date; in progress = has start, no end).
+- **PATCH** — At least one field must be sent; no empty updates.
+
+---
+
+## Project structure
+
+- **`client/`** — React (Vite) frontend.
+- **`server/`** — Express API and SQLite (`data.db`).
+
+Run the backend and frontend separately (see below).
+
+---
+
+## Run locally
+
+1. **Backend**
+   ```bash
+   cd server
+   npm install
+   npm run dev
+   ```
+   API runs at `http://localhost:3000`. Ensure `server/.env` has `CLIENT_ORIGIN` if the client is on another port.
+
+2. **Frontend**
+   ```bash
+   cd client
+   npm install
+   npm run dev
+   ```
+   Set `VITE_API_URL=http://localhost:3000` in `client/.env` if needed. Open the URL Vite prints (e.g. `http://localhost:5173`).
+
+---
 
 ## References
-- [Method used for adding transition to scrollbar](https://stackoverflow.com/a/74050413)
-- [Canva for the logo using free resources](https://www.canva.com/)
+
+- [Scrollbar transition (Stack Overflow)](https://stackoverflow.com/a/74050413)
+- [Canva (logo, free resources)](https://www.canva.com/)
+
+---
+
+> A **Vercel-ready** version with Next.js, Neon (PostgreSQL), and Google sign-in lives in **`knit-note-vercel/`**. See that folder’s README for deployment and auth.
