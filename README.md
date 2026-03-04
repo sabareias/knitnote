@@ -2,6 +2,8 @@
 
 **A fiber-arts project tracker** — create, edit, and track knitting and crochet projects with full CRUD, client- and server-side validation, and a simple card-based UI.
 
+**Live preview:** [https://knitnote.vercel.app/](https://knitnote.vercel.app/)
+
 [![Preview video](https://imgur.com/a/knit-note-preview-Uu9C6Ud)](https://imgur.com/a/knit-note-preview-Uu9C6Ud)
 
 ![Knit Note](projectImages/KnitNote.png "Knit Note")
@@ -92,4 +94,4 @@ Run the backend and frontend separately (see below).
 
 ---
 
-> A **Vercel-ready** version with Next.js, Neon (PostgreSQL), and Google sign-in lives in **`knit-note-vercel/`**. See that folder’s README for deployment and auth.
+> A **Vercel-ready** version with Next.js, Neon (PostgreSQL), and Google sign-in lives in **`knit-note-vercel/`**. **[Live preview](https://knitnote.vercel.app/)** · See that folder’s README for deployment and auth.

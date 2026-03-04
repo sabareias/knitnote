@@ -4,6 +4,7 @@ A fiber-arts project tracker: add, edit, and track knitting and crochet projects
 
 - **Stack:** Next.js (App Router), React, NextAuth (Google), Neon (PostgreSQL), Bootstrap
 - **Deploy:** Vercel (serverless API routes + server-side auth)
+- **Live preview:** [https://knitnote.vercel.app/](https://knitnote.vercel.app/)
 
 > **Note:** This Vercel-ready version was adapted from the original Knit Note (React + Express + SQLite) with the help of AI-assisted development—including migration to Next.js, Neon (PostgreSQL), and Google sign-in for user-scoped data. The structure and behavior mirror the original app where possible.
 
