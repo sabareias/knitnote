@@ -1,0 +1,201 @@
+/* App.css */
+
+/* Scrollbar Styling */
+/* method for using transition on scrollbar from: https://stackoverflow.com/a/74050413 */
+@property --var1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #302c2a;
+}
+
+#projectList {
+  transition: --var1 .3s ease;
+  
+}
+
+#projectList:hover {
+  --var1: #3f3b38;
+}
+
+#projectList::-webkit-scrollbar {
+  background: #302c2a;
+  width: 8px;
+
+}
+
+#projectList::-webkit-scrollbar-thumb {
+  background: var(--var1);
+  border-radius: 4px;
+}
+
+hr {
+  border-top: 1px solid #756d69;
+}
+
+/* ------------------------------------------------------------------ */
+/* Custom Bootstrap Theme Overrides */
+:root[data-bs-theme="dark"] {
+  --bs-body-bg: #302c2a;
+  --bs-tertiary-bg: #3f3b38;
+  --bs-body-color: var(--bs-white);
+}
+
+/* Button  */
+.btn-custom-primary {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-bg: #536e50;
+  --bs-btn-border-color: #6b8069;
+  --bs-btn-hover-color: var(--bs-white);
+  --bs-btn-hover-bg: #435a41;
+  --bs-btn-hover-border-color: #536e50;
+  --bs-btn-active-color: var(--bs-btn-hover-color);
+  --bs-btn-active-bg: #374935;
+  --bs-btn-active-border-color: #435a41;
+}
+.btn-custom-outline {
+  --bs-btn-font-weight: 600;
+  --bs-btn-color: #536e50;
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #536e50;
+  --bs-btn-hover-color: #435a41;
+  --bs-btn-hover-border-color: #435a41;
+  --bs-btn-active-color:#536e50;
+  --bs-btn-active-border-color: #536e50;
+}
+
+
+/* Checkbox */
+.form-check-input:checked {
+    background-color: #536e50;
+    border-color: #536e50;
+}
+
+.form-check-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.25rem rgba(83,110,80,0.25);
+  border-color: #536e50;
+}
+
+/* Accordion */
+.accordion {
+  --bs-accordion-bg: #302c2a;
+  --bs-accordion-border-color: #3f3b38;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgb(83, 110, 80, 0.25); 
+}
+
+.accordion-button {
+  --bs-accordion-active-bg: #536e50;
+  --bs-accordion-active-color: var(--bs-white);
+}
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}
+
+/* Card */
+.card {
+  border-color: #3f3b38;
+}
+.card-header {
+  background-color: rgba(63, 59, 56, 0.7);
+  border-color: #3f3b38;
+}  
+
+.card-footer {
+  background-color: rgba(63, 59, 56, 0.7);
+  border-color: #3f3b38;
+}
+
+/* Form */
+
+.input-group-text {
+  background-color: rgba(63, 59, 56, 0.7);
+  border-color: #3f3b38;
+  color: #fff;
+}
+
+.form-control {
+  border-color: #3f3b38;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #536e50;
+  box-shadow: 0 0 0 0.25rem rgba(83, 110, 80, 0.25);
+}
+
+.form-control:active {
+  border-color: #536e50;
+  box-shadow: 0 0 0 0.25rem rgba(83, 110, 80, 0.25);
+}
+
+.form-control::placeholder {
+  color: #999;
+  opacity: 0.7;
+}
+
+.form-select:active {
+  border-color: #536e50;
+  box-shadow: 0 0 0 0.25rem rgba(83, 110, 80, 0.25);
+}
+
+
+/* Delete Button */
+#delButton {
+  color: #999;
+}
+#delButton:hover {
+  color: white;
+}
+
+/* Modal */
+.modal-content {
+  border: none;
+}
+
+/* ------------------------------------------------------------------ */
+
+.accordion-button {
+  height:38px;
+}
+
+
+
+/* ------------------------------------------------------------------ */
+/* Responsive Breakpoints */
+/* ------------------------------------------------------------------ */
+
+/* Default Logo Size */
+#logo {
+  width: 75vw;
+}
+
+@media (min-width: 768px) {
+  #logo {
+    width: 50vw;
+  }
+  /* Project List Scroll */
+  #projectList {
+  overflow-y:scroll;
+  max-height: 55vh;
+}
+}
+@media (min-width: 992px) {
+  #logo {
+    width: 50vw;
+  }
+}
+@media (min-width: 1200px) {
+  #logo {
+    width: 35vw;
+  }
+}
+/* ------------------------------------------------------------------ */
