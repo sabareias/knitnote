@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Env and secrets (all subprojects)
+.env
+.env.local
+.env.*.local
+!.env.local.example
+!.env.example
+
+# Server (Express + SQLite)
+server/data.db
+server/*.db
+
+# Build / output
+dist/
+build/
+.next/
+out/
+.vercel/
+
+# Logs and debug
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.sw?
+*.suo
+
+# Optional: uncomment if you want to ignore the backup readme
+README.original.md
+README.knit-note-vercel.md
