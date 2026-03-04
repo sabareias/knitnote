@@ -4,7 +4,7 @@
 
 [![Preview video](https://imgur.com/a/knit-note-preview-Uu9C6Ud)](https://imgur.com/a/knit-note-preview-Uu9C6Ud)
 
-![Knit Note](KnitNote.png "Knit Note")
+![Knit Note](projectImages/KnitNote.png "Knit Note")
 
 ---
 
