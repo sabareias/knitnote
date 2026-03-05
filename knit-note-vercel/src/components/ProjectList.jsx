@@ -22,18 +22,26 @@ export default function ProjectList({ Projects, onDelete, onToggle, onEdit }) {
     handleClose();
   };
 
+  function toDateOnly(dateStr) {
+    if (!dateStr || typeof dateStr !== "string") return "";
+    return dateStr.split("T")[0];
+  }
+
   function formatDate(start, end) {
     if (!start && !end) return "( no date set )";
-    if (start && !end) {
-      const [year, month, day] = start.split("-");
+    const startPart = toDateOnly(start);
+    const endPart = toDateOnly(end);
+    if (startPart && !endPart) {
+      const [year, month, day] = startPart.split("-");
       return `${month}/${day}/${year} - ( no date set )`;
     }
-    if (!start && end) {
-      const [year, month, day] = end.split("-");
+    if (!startPart && endPart) {
+      const [year, month, day] = endPart.split("-");
       return `( no date set ) - ${month}/${day}/${year}`;
     }
-    const [startYear, startMonth, startDay] = start.split("-");
-    const [endYear, endMonth, endDay] = end.split("-");
+    if (!startPart && !endPart) return "( no date set )";
+    const [startYear, startMonth, startDay] = startPart.split("-");
+    const [endYear, endMonth, endDay] = endPart.split("-");
     return `${startMonth}/${startDay}/${startYear} - ${endMonth}/${endDay}/${endYear}`;
   }
 
