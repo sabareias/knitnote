@@ -112,14 +112,19 @@ export default function EditProject({ project, onSave, onCancel }) {
     setEndDate("");
   }
 
+  function toDateOnly(dateStr) {
+    if (!dateStr || typeof dateStr !== "string") return "";
+    return dateStr.split("T")[0];
+  }
+
   function setFields(p) {
     setTitle(p.title || "");
     setCategory(p.category || "");
     setCraft(p.craft || "");
     setPatternName(p.pattern || "");
     setYarn(p.yarn || "");
-    setStartDate(p.startDate || "");
-    setEndDate(p.endDate || "");
+    setStartDate(toDateOnly(p.startDate) || "");
+    setEndDate(toDateOnly(p.endDate) || "");
   }
 
   useEffect(() => {
