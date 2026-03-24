@@ -48,10 +48,10 @@ export default function AddProject({ onAdd }) {
     const trimmedYarn = yarn.trim();
     if (trimmedYarn) {
       if (trimmedYarn.length < 3) {
-        setYarnError("Pattern name must be at least 3 characters.");
+        setYarnError("Yarn name must be at least 3 characters.");
         return;
       } else if (trimmedYarn.length > 100) {
-        setYarnError("Pattern name must not exceed 100 characters.");
+        setYarnError("Yarn name must not exceed 100 characters.");
         return;
       }
     }
