@@ -87,7 +87,3 @@ A fiber-arts project tracker: add, edit, and track knitting and crochet projects
 | `npm run dev` | Start dev server |
 | `npm run build` | Production build |
 | `npm run start` | Run production server |
-
----
-
-For more detail (Neon free-tier monitoring, production checklist, troubleshooting), see [README.knit-note-vercel.md](./README.knit-note-vercel.md).
